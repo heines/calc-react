@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo|Major+Mono+Display&display=swap');
+
+.p-calc {
+  border: 1px solid #CCCCCC;
+  font-family: 'Baloo', cursive;
+  color: #555;
+  background-color: #CCC;
+  &__cell {
+    width: 3em;
+    padding: 0.1em;
+    margin: 0.1em 0 0 0.1em;
+    background: #EEE;
+    cursor: pointer;
+    border-radius: 5%;
+    &:last-child {
+      margin: 0.1em 0.1em 0 0.1em;
+    }
+    &.disable {
+      background: #AAA;
+    }
+  }
+  &__row {
+    display: flex;
+    &:last-child {
+      div {
+        margin: 0.1em 0 0.1em 0.1em;
+      }
+    }
+  }
+}
