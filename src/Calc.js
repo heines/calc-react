@@ -25,9 +25,12 @@ class Calc extends React.Component {
         nget: false,
       });
     } else {
-      this.setState({
-        ans: Number(String(ans) + String(i)),
-      });
+      let ansStr = String(ans) + String(i);
+      if(ansStr.length < 15) {
+        this.setState({
+          ans: Number(ansStr),
+        });
+      }
     }
   }
 
@@ -62,15 +65,23 @@ class Calc extends React.Component {
     let ans = Number(this.state.ans);
     switch (this.state.ope) {
       case "plus":
-        return num + ans;
+        return this.toExp(num + ans);
       case "minus":
-        return num - ans;
+        return this.toExp(num - ans);
       case "times":
-        return num * ans;
+        return this.toExp(num * ans);
       case "dividedby":
-        return num / ans;
+        return this.toExp(num / ans);
       default:
-        return num + ans;
+        return this.toExp(num + ans);
+    }
+  }
+
+  toExp(num) {
+    if(String(num).length > 15) {
+      return Number(num).toExponential(8);
+    } else {
+      return num;
     }
   }
 
@@ -83,7 +94,7 @@ class Calc extends React.Component {
   }
 
   handleClickPercentage() {
-    let ans = this.state.ans * 0.01;
+    let ans = this.toExp(this.state.ans * 0.01);
     this.handleClickClear();
     this.setState({
       ans: ans,
@@ -91,7 +102,7 @@ class Calc extends React.Component {
   }
 
   handleClickSign() {
-    let ans = this.state.ans * (-1);
+    let ans = this.toExp(this.state.ans * (-1));
     this.setState({
       ans: ans
     });
