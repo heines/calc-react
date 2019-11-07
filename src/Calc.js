@@ -1,14 +1,7 @@
 import React from 'react';
 import './Calc.scss';
 import Display from './Display';
-
-function CalcBtn(props) {
-  return (
-    <div className="p-calc__cell" onClick={props.onClick}>
-      {props.value}
-    </div>
-  );
-}
+import CalcBtn from './CalcBtn';
 
 class Calc extends React.Component {
   constructor(props) {
