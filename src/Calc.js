@@ -32,18 +32,9 @@ class Calc extends React.Component {
         nget: false,
       });
     } else {
-      if(this.state.sep) {
-        let dep = this.state.dep + 1;
-        let atdp = Number(i) / (10 ** this.state.dep);
-        this.setState({
-          ans: Number(ans) + atdp,
-          dep: dep,
-        });
-      } else {
-        this.setState({
-          ans: Number(String(ans) + String(i)),
-        });
-      }
+      this.setState({
+        ans: Number(String(ans) + String(i)),
+      });
     }
   }
 
@@ -122,7 +113,9 @@ class Calc extends React.Component {
   }
 
   handleClickDecPoint() {
+    let ans = this.state.ans;
     this.setState({
+      ans: String(ans) + '.',
       sep: true
     })
   }
