@@ -12,7 +12,6 @@ class Calc extends React.Component {
       ope: "plus",
       nget: true,
       calc: false,
-      dep: 1,
       sep: false
     };
   }
@@ -41,7 +40,6 @@ class Calc extends React.Component {
       ope: operator,
       nget: true,
       calc: true,
-      dep: 0,
       sep: false,
     });
   }
@@ -53,23 +51,24 @@ class Calc extends React.Component {
       ope: "plus",
       nget: true,
       calc: false,
-      dep: 0,
       sep: false,
     })
   }
 
   calc() {
+    let num = Number(this.state.num);
+    let ans = Number(this.state.ans);
     switch (this.state.ope) {
       case "plus":
-        return this.state.num + this.state.ans;
+        return num + ans;
       case "minus":
-        return this.state.num - this.state.ans;
+        return num - ans;
       case "times":
-        return this.state.num * this.state.ans;
+        return num * ans;
       case "dividedby":
-        return this.state.num / this.state.ans;
+        return num / ans;
       default:
-        return this.state.num + this.state.ans;
+        return num + ans;
     }
   }
 
@@ -81,7 +80,6 @@ class Calc extends React.Component {
       ope: "plus",
       nget: true,
       calc: false,
-      dep: 1,
       sep: false,
     });
   }
@@ -107,10 +105,12 @@ class Calc extends React.Component {
 
   handleClickDecPoint() {
     let ans = this.state.ans;
-    this.setState({
-      ans: String(ans) + '.',
-      sep: true
-    })
+    if(!this.state.sep) {
+      this.setState({
+        ans: String(ans) + '.',
+        sep: true
+      })
+    }
   }
 
   setNum(i) {
@@ -188,25 +188,25 @@ class Calc extends React.Component {
           {this.setOperator("÷", "dividedby")}
         </div>
         <div className="p-calc__row">
-          {this.setNum(7)}
-          {this.setNum(8)}
-          {this.setNum(9)}
+          {this.setNum("7")}
+          {this.setNum("8")}
+          {this.setNum("9")}
           {this.setOperator("×", "times")}
         </div>
         <div className="p-calc__row">
-          {this.setNum(4)}
-          {this.setNum(5)}
-          {this.setNum(6)}
+          {this.setNum("4")}
+          {this.setNum("5")}
+          {this.setNum("6")}
           {this.setOperator("−", "minus")}
         </div>
         <div className="p-calc__row">
-          {this.setNum(1)}
-          {this.setNum(2)}
-          {this.setNum(3)}
+          {this.setNum("1")}
+          {this.setNum("2")}
+          {this.setNum("3")}
           {this.setOperator("+", "plus")}
         </div>
         <div className="p-calc__row">
-          {this.setNum(0)}
+          {this.setNum("0")}
           {this.setNum("00")}
           {this.setDecPoint()}
           {this.setCalc("=")}
