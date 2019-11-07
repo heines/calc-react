@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/calc-react/static/css/main.c8568cec.chunk.css",
-    "main.js": "/calc-react/static/js/main.5fc038e5.chunk.js",
-    "main.js.map": "/calc-react/static/js/main.5fc038e5.chunk.js.map",
+    "main.css": "/calc-react/static/css/main.f287da47.chunk.css",
+    "main.js": "/calc-react/static/js/main.353b6a0f.chunk.js",
+    "main.js.map": "/calc-react/static/js/main.353b6a0f.chunk.js.map",
     "runtime-main.js": "/calc-react/static/js/runtime-main.0bbb19fe.js",
     "runtime-main.js.map": "/calc-react/static/js/runtime-main.0bbb19fe.js.map",
     "static/js/2.53252b90.chunk.js": "/calc-react/static/js/2.53252b90.chunk.js",
     "static/js/2.53252b90.chunk.js.map": "/calc-react/static/js/2.53252b90.chunk.js.map",
     "index.html": "/calc-react/index.html",
-    "precache-manifest.d0c02022be802412893f91d7e5d3329d.js": "/calc-react/precache-manifest.d0c02022be802412893f91d7e5d3329d.js",
+    "precache-manifest.d567c2bb12fa666befdc5bf904865dd0.js": "/calc-react/precache-manifest.d567c2bb12fa666befdc5bf904865dd0.js",
     "service-worker.js": "/calc-react/service-worker.js",
-    "static/css/main.c8568cec.chunk.css.map": "/calc-react/static/css/main.c8568cec.chunk.css.map"
+    "static/css/main.f287da47.chunk.css.map": "/calc-react/static/css/main.f287da47.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.0bbb19fe.js",
     "static/js/2.53252b90.chunk.js",
-    "static/css/main.c8568cec.chunk.css",
-    "static/js/main.5fc038e5.chunk.js"
+    "static/css/main.f287da47.chunk.css",
+    "static/js/main.353b6a0f.chunk.js"
   ]
 }
