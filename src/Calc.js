@@ -18,6 +18,7 @@ class Calc extends React.Component {
 
   handleClickNum(i) {
     let ans = this.state.ans;
+    let num = this.state.num;
     if(this.state.nget) {
       this.setState({
         ans: Number(i),
@@ -30,20 +31,6 @@ class Calc extends React.Component {
     }
   }
 
-  handleClickOperator(operator) {
-    let ans = this.state.ans;
-    if(this.state.calc) {
-      ans = this.calc();
-    }
-    this.setState({
-      num: ans,
-      ope: operator,
-      nget: true,
-      calc: true,
-      sep: false,
-    });
-  }
-
   handleClickClear() {
     this.setState({
       ans: 0,
@@ -53,6 +40,21 @@ class Calc extends React.Component {
       calc: false,
       sep: false,
     })
+  }
+
+  handleClickOperator(operator) {
+    let ans = this.state.ans;
+    if(this.state.calc) {
+      ans = this.calc();
+    }
+    this.setState({
+      ans: ans,
+      num: ans,
+      ope: operator,
+      nget: true,
+      calc: true,
+      sep: false,
+    });
   }
 
   calc() {
@@ -74,25 +76,17 @@ class Calc extends React.Component {
 
   handleClickCalc() {
     let ans = this.calc();
+    this.handleClickClear();
     this.setState({
       ans: ans,
-      num: 0,
-      ope: "plus",
-      nget: true,
-      calc: false,
-      sep: false,
     });
   }
 
   handleClickPercentage() {
     let ans = this.state.ans * 0.01;
+    this.handleClickClear();
     this.setState({
       ans: ans,
-      num: 0,
-      ope: "plus",
-      nget: true,
-      calc: false,
-      sep: false,
     });
   }
 
