@@ -185,7 +185,8 @@ class Calc extends React.Component {
     let ans = this.state.ans;
     return (
       <div className="p-calc">
-        <Display param={ans}/>
+        <Display />
+        <Display param={ans} />
         <div className="p-calc__row">
           {this.setClear("AC")}
           {this.setSign("+/-")}

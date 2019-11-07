@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Calc from './Calc';
+import Display from './Display';
 
 function App() {
   return (
